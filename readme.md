@@ -1,5 +1,7 @@
 # Firebase Workshop
 
+Create a new project on [_https://console.firebase.google.com_](https://console.firebase.google.com)
+
 
 ## Setup
 
@@ -10,8 +12,6 @@ firebase login
 
 
 ## Database
-Create a new project on [_https://console.firebase.google.com_](https://console.firebase.google.com)
-
 Go to Database, add some stuff.
 
 
@@ -101,3 +101,37 @@ https://firebase.google.com/docs/functions/get-started
 
 ## Hosting
 
+Run `firebase init` again in the same project and select hosting.
+
+"Configure as a single-page app (rewrite all urls to /index.html)? "
+is just a simple JSON rule (`firebase.json`) that can be changed later.
+
+
+`public/index.html` will be created.
+
+Run `firebase deploy` or `firebase deploy --only hosting`.
+Open `https://{projectID}.firebaseapp.com` 
+
+### Connect frontend to database
+Bytt ut (i public/index.html)
+
+` // firebase.database().ref('/path/to/ref').on('value', snapshot => { });`
+med
+```javascript
+firebase.database().ref('/').on('value', snapshot => {
+  console.log("En database endring", snapshot.val())
+});
+```
+and deploy.
+The whole database will be printed out in console on load, and also on changes.
+
+### Custom domain
+https://firebase.google.com/docs/hosting/custom-domain
+
+### Connect Functions with hosting
+https://firebase.google.com/docs/hosting/functions
+* Can write "fronted code" or expose API from functions. Ganske fett, server side react.js servert fra serverless??
+
+
+
+## Other products
