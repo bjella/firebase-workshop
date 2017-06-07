@@ -37,6 +37,9 @@ curl -X PUT -d '{
 ```
 
 
+### Idea for tasks
+* Test the different between the HTTP verbs (see docs)
+* Look up rules and authentication in the docs.
 
 
 # Functions
